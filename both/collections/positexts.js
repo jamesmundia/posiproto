@@ -1,5 +1,12 @@
 Positexts = new Mongo.Collection('positexts');
 
+Positexts.allow({
+  insert: function(userId, doc) {
+    return !!Meteor.userId;
+    console.log("Insert has run");
+  }
+});
+
 Positexts.attachSchema(new SimpleSchema({
   message: {
     type: String
@@ -23,8 +30,8 @@ Positexts.attachSchema(new SimpleSchema({
   createdBy: {
   	type: String,
   	label: "created By",
-  	autoValue: function () {
-  		return this.UserId ()
+  	autoValue: function() {
+  		return Meteor.userId()
   	},
 	  	autoform: {
 	  		type: "hidden"

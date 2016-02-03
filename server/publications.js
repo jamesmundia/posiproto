@@ -1,5 +1,5 @@
 Meteor.publish('positexts', function(){
-return Positexts.find({}, {limit: 1});
+return Positexts.find({createdBy: this.UserId});
 });
 
 
