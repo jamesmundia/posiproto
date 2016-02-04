@@ -1,12 +1,13 @@
 <template name="positext">
 	
-	<div>
-		<h3>Your posiText</h3>
+	<div class="jumbotron">
+		<div><h3>Your posiText</h3>
 			<ul>
 			{{#each positexts}}
-				<li>{{message}}</li>
+				<li>"{{message}}" - {{author}}</li>
 			{{/each}}
 			</ul>
+		</div>
 	</div>
 
 </template>
