@@ -1,1 +1,1 @@
-Meteor.subscribe('positexts');
+Meteor.subscribe('positexts')
