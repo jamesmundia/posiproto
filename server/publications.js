@@ -1,5 +1,7 @@
 Meteor.publish('positexts', function () {
-    return Positexts.find();
+		return Positexts.find({}, {limit:1})
+		return this.ready();
+
   });
 
 //	var random = _.sample(Positexts.find().fetch());
